@@ -28,5 +28,5 @@ ss+v2ray-plugin缺点：
 先去ZeroSSL.com申请一个免费的IP证书  
 然后下载sssm.sh，创建一个/home/sssm目录，把sssm.sh放进去，然后使用root运行。  
 ```
-mkdir /home/sssm && wget --no-check-certificate -q -O /home/sssm/sssm.sh "https://github.com/yeyingorg/sssm.sh/raw/master/sssm.sh" && chmod +x /home/sssm/sssm.sh && bash /home/sssm/sssm.sh
+mkdir /home/sssm && wget --no-check-certificate -q -O /home/sssm/sssm.sh "https://github.com/yeyingorg/sssm.sh/raw/main/sssm.sh" && chmod +x /home/sssm/sssm.sh && bash /home/sssm/sssm.sh
 ```
