@@ -2,7 +2,7 @@
 使用v2ray-plugin插件的Shadowsocks服务器的多用户管理脚本  
 (s)hadow(s)ocks (s)erver with v2ray-plugin multi-user (m)anager script  
 
-这个脚本包含了我5年对shadowsocks+v2ray-plugin+nginx的全部理解  
+这个脚本包含了我4年对shadowsocks+v2ray-plugin+nginx的全部理解  
 
 本脚本硬性需求：  
 1. IPv4证书 (可在ZeroSSL免费申请)  
