@@ -129,7 +129,7 @@ first_time_run() {
     while :
     do
         read -p "请输入证书使用的IPv4地址(例如 123.123.123.123): " ip_address
-        check_ip $ip_address
+        check_ipv4 $ip_address
         [ $? -eq 0 ] && break
     done
         echo "ip_address=${ip_address}" >> "${dir}/config_tmp"
