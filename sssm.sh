@@ -309,7 +309,7 @@ check_installed() {
 }
 
 load_config(){
-    ip_address=`cat "${dir}/config" | grep "ip_address" | awk -F "=" '{print $NF}'`
+    ip_address=$(cat "${dir}/config" | grep "ip_address" | awk -F "=" '{print $NF}')
 
     if [ ! -f "${dir}/certificate.crt" ]; then
         cert_certificate_crt="${dir}/certificate.crt 文件不存在"
@@ -338,15 +338,15 @@ load_config(){
         cert_private_key="错误"
     fi
 
-    nginx_conf_file=`cat "${dir}/config" | grep "nginx_conf_file" | awk -F "=" '{print $NF}'`
+    nginx_conf_file=$(cat "${dir}/config" | grep "nginx_conf_file" | awk -F "=" '{print $NF}')
 
-    nginx_port=`cat "${dir}/config" | grep "nginx_port" | awk -F "=" '{print $NF}'`
+    nginx_port=$(cat "${dir}/config" | grep "nginx_port" | awk -F "=" '{print $NF}')
 
-    ss_server_port=`cat "${dir}/config" | grep "ss_server_port" | awk -F "=" '{print $NF}'`
-    ss_method=`cat "${dir}/config" | grep "ss_method" | awk -F "=" '{print $NF}'`
-    ss_password=`cat "${dir}/config" | grep "ss_password" | awk -F "=" '{print $NF}'`
-    ss_dns=`cat "${dir}/config" | grep "ss_dns" | awk -F "=" '{print $NF}'`
-    ss_ipv6_first=`cat "${dir}/config" | grep "ss_ipv6_first" | awk -F "=" '{print $NF}'`
+    ss_server_port=$(cat "${dir}/config" | grep "ss_server_port" | awk -F "=" '{print $NF}')
+    ss_method=$(cat "${dir}/config" | grep "ss_method" | awk -F "=" '{print $NF}')
+    ss_password=$(cat "${dir}/config" | grep "ss_password" | cut -c13-)
+    ss_dns=$(cat "${dir}/config" | grep "ss_dns" | awk -F "=" '{print $NF}')
+    ss_ipv6_first=$(cat "${dir}/config" | grep "ss_ipv6_first" | awk -F "=" '{print $NF}')
 }
 
 load_single_user_from_line(){
@@ -780,7 +780,7 @@ main() {
 
     echo "IP ${ip_address}"
     echo "certificate.crt: ${cert_certificate_crt} | ca_bundle.crt: ${cert_ca_bundle_crt} | private.key: ${cert_private_key}"
-    echo "nginx ${nginx_version} ${nginx_running} ${nginx_conf_file}" 
+    echo "nginx ${nginx_version} ${nginx_running} ${nginx_conf_file}"
     echo "shadowsocks-rust ${shadowsocks_rust_version} ${ss_server_running} 最新版: ${shadowsocks_rust_latest}"
     echo "v2ray-plugin ${v2ray_plugin_version} ${v2ray_plugin_running} 最新版: ${v2ray_plugin_latest}"
 
