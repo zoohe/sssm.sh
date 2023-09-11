@@ -202,6 +202,8 @@ first_time_run() {
     fi
     mv "${dir}/config_tmp" "${dir}/config"
     echo "恭喜您完成了初次使用配置~"
+
+    [ ! -f "${dir}/user" ] && touch "${dir}/user"
 }
 
 import_cert() {
@@ -814,9 +816,6 @@ main() {
 }
 
 list_user() {
-    if [ ! -f "${dir}/user" ]; then
-        touch "${dir}/user"
-    fi
     count=0
     output="　/用户端口/用户名/流量限制(GB)/已使用流量/上个月使用流量"
     while read line
